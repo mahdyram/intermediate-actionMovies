@@ -1,6 +1,10 @@
+import PageTitle from "../PageTitle";
+
 export default function Contact() {
   return (
     <div>
+      <PageTitle>Contact</PageTitle>
+
       <p className="contact-text">
         Have questions, feedback, or just want to say hello? Reach out to us at{" "}
         <strong>ActionMovies</strong>!<br />

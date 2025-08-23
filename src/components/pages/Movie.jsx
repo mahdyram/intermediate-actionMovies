@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
-import { Card, Typography, Rate, Button, Tag } from "antd";
+import { Card, Typography, Rate } from "antd";
 import { useEffect } from "react";
+import PageTitle from "../PageTitle";
 const { Meta } = Card;
 const { Title, Paragraph } = Typography;
 
@@ -13,6 +14,8 @@ export default function Movie() {
 
   return (
     <div className="movie">
+      <PageTitle>{`${state.title}`}</PageTitle>
+
       <div style={{ width: "400px" }}>
         <Title level={3}>Overview</Title>
         <Paragraph className="hidden-scroll">{state.overview}</Paragraph>
@@ -35,7 +38,10 @@ export default function Movie() {
           />
         }
       >
-        <Meta title={state.title} description={state.vote_average.toFixed(1)} />
+        <Meta
+          title={state.title}
+          description={state.release_date.split("-")[0]}
+        />
       </Card>
     </div>
   );

@@ -1,6 +1,10 @@
+import PageTitle from "../PageTitle";
+
 export default function About() {
   return (
     <div>
+      <PageTitle>About</PageTitle>
+
       <p className="about-text">
         Welcome to <strong>ActionMovies</strong> – a React-based web application
         built with Vite.

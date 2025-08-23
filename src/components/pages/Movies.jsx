@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Card, Col, Row, Button } from "antd";
+import PageTitle from "../PageTitle";
 const { Meta } = Card;
 
 export default function Movies() {
@@ -43,6 +44,8 @@ export default function Movies() {
 
   return (
     <div>
+      <PageTitle>{`Movies - Page ${pageNum}`}</PageTitle>
+
       <h3>Best Action Movies</h3>
 
       <Button
@@ -58,11 +61,25 @@ export default function Movies() {
 
       <Row gutter={[14, 14]} style={{ padding: 20, marginTop: 10 }}>
         {popularMovies.map(
-          ({ id, title, poster_path, vote_average, overview }) => (
+          ({
+            id,
+            title,
+            poster_path,
+            vote_average,
+            overview,
+            release_date,
+          }) => (
             <Col key={id} xs={12} sm={12} md={6} lg={4}>
               <Link
                 to={`${id}`}
-                state={{ id, title, poster_path, vote_average, overview }}
+                state={{
+                  id,
+                  title,
+                  poster_path,
+                  vote_average,
+                  overview,
+                  release_date,
+                }}
               >
                 <Card
                   hoverable

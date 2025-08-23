@@ -1,6 +1,10 @@
+import PageTitle from "../PageTitle";
+
 export default function Home() {
   return (
     <div>
+      <PageTitle>Home</PageTitle>
+
       <p className="home-text">
         Welcome to <strong>ActionMovies</strong> – your ultimate destination for
         the best action films!
